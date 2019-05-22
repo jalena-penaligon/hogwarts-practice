@@ -27,7 +27,7 @@ class HogwartsService
   def conn
     Faraday.new(url: 'http://hogwarts-as-a-service.herokuapp.com/') do |f|
       f.adapter Faraday.default_adapter
-      f.headers['x_api_key'] = 'lumos'
+      f.headers['x_api_key'] = ENV['hogwarts-key']
     end
   end
 end
